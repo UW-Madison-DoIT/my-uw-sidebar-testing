@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sidebar Samples</title>
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+  
+
+</head>
+  <body style="height: 100%">
+    <div class="container-fluid global-container" style="height: 100%">
+      <div class="row" style="height: 100%">
+        <div id="global-side-bar-left-page" class="col-xs-12" style="height: 100%">
+          <div class="fluid-container" style="height: 100%">
+            <div class="row" style="background: darkgrey;">
+              <div class="col-xs-1"> 
+                <div id="global-sidebar-left-hamburger">
+                    <button class="button" style="background: inherit; border: none; padding: .5em;">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                </div>
+              </div>
+              <div class="col-xs-11"><h1 style='padding-left: 1em;'>My UW</h1></div>
+            </div>
+
+            <div class="row" style="height: 100%">
+              <div class="col-xs-2" id="sidebar" style="background: lightgrey;z-index: 100;">
+                <ul class="list-group" style="min-width: 10em;">
+                  <li class="list-group-item"><span class="glyphicon glyphicon-user"></span> My Profile</li>
+                  <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-star"></span> Favorites</a></li>
+                  <li class="list-group-item"><span class="glyphicon glyphicon-eye-open"></span> Settings</li>
+                  <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-map-marker"></span> Map</a></li>
+                  <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-cog"></span> Apps</a></li>
+                  <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-volume-up"></span> Feedback</a></li>
+                  <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-10" style='background: grey; height: 100%;' id="thePage">
+                <h1>Body Goes here</h1>
+                <a href="index.html" class="btn btn-default">back</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+          <!-- Latest compiled and minified JavaScript -->
+          <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+          <script type="text/javascript">
+              var up = up || {};
+              up.jQuery = jQuery.noConflict(true);
+              up.jQuery(document).ready(function(){
+                  up.jQuery('div#global-sidebar-left-hamburger').click(function(){
+                      var sidebarSelector = 'div#sidebar';
+                      var pageSelector = "div#thePage";
+                      up.jQuery(sidebarSelector).slideToggle({
+                        duration: 0, 
+                        complete : function(){
+                          if(up.jQuery(thePage).hasClass("col-xs-10")) {
+                            up.jQuery(thePage).addClass("col-xs-12").removeClass("col-xs-10");
+                          } else {
+                            up.jQuery(thePage).addClass("col-xs-10").removeClass("col-xs-12");
+                          }
+                        }
+                      });
+                  });
+              });
+          </script>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
